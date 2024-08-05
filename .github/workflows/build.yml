@@ -13,9 +13,11 @@ jobs:
     defaults: { run: { shell: bash } }
     steps:
     - uses: actions/checkout@v4
+    
     - name: Install dependencies
       run: |
        sh -c 'apt update && apt install libarchive-tools'
+
     - name: Get variables
       run: |
         sed -i 's|\r$||g' variables build.config
